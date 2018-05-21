@@ -2,5 +2,5 @@
 
 LaTeX at link below
 
-Updated: with 2a and 5a
+updated with 5b and 7 completed( 5b still needs work!)
 https://www.overleaf.com/16144325nkrqvsdhxbpb
