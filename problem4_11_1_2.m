@@ -23,7 +23,17 @@ plot(ta,[w1a w2a]);
 hold on
 fplot(sol1,[0 pi./2]);
 fplot(sol2,[0 pi./2]);
+legend('w_1(x_i)','w_2(x_i)','y(x)','dy(x)/dx');
+xlabel('x_i');
+ylabel('w_n(x_i) and y^{n}(x)');
+title('Comparision of actual solution and LinearShooting solution with h= \pi/4');
 hold off
+
+TaW1 = table(ta',w1a,sol1(ta'), abs(w1a-sol1(ta')),'VariableNames',{'x','W1','y','err1'});
+writetable(TaW1,'11-1-2aW1.csv');
+
+TaW2 = table(ta',w2a,sol2(ta'),abs(w2a-sol2(ta')),'VariableNames',{'x','W2','Dy','err2'});
+writetable(TaW2,'11-1-2aW2.csv');
 
 %% Part (b)
 
@@ -35,6 +45,14 @@ plot(tb,[w1b w2b]);
 hold on
 fplot(sol1,[0 pi./2]);
 fplot(sol2,[0 pi./2]);
+legend('w_1(x_i)','w_2(x_i)','y(x)','dy(x)/dx');
+xlabel('x_i');
+ylabel('w_n(x_i) and y^{n}(x)');
+title('Comparision of actual solution and LinearShooting solution with h= \pi/8');
 hold off
 
-% FIXME: Add legends/axis-labels/title to figures and a few more comments to code
+TbW1 = table(tb',w1b,sol1(tb'), abs(w1b-sol1(tb')),'VariableNames',{'x','W1','y','err1'});
+writetable(TbW1,'11-1-2bW1.csv');
+
+TbW2 = table(tb',w2b,sol2(tb'),abs(w2b-sol2(tb')),'VariableNames',{'x','W2','Dy','err2'});
+writetable(TbW2,'11-1-2bW2.csv');
